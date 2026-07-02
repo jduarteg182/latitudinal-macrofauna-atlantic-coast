@@ -1,64 +1,36 @@
 # Latitudinal macrofauna diversity along the Mexico-U.S. Atlantic coast
 
-This repository contains the data-processing workflow, analysis scripts, and processed tables used for the manuscript:
+This repository contains the data and supporting files associated with the manuscript:
 
-**Latitudinal variation in benthic macrofauna diversity along the Mexico-U.S. Atlantic Coast**
+**Latitudinal variation in benthic invertebrate macrofauna diversity along the Mexico-U.S. Atlantic Coast**
 
-The repository was created to make the analyses reproducible and to document how open occurrence records, field-survey records, environmental predictors, Random Forest models, and beta-diversity analyses were processed.
+The dataset compiles occurrence records of shallow-water benthic invertebrate macrofauna along the Mexico-U.S. Atlantic coast, from Quintana Roo, Mexico, to Maine, USA, within the intertidal and shallow subtidal zone from 0 to 20 m depth.
 
-Repository: https://github.com/jduarteg182/latitudinal-macrofauna-atlantic-coast
+## Dataset overview
 
-## Manuscript status
+The final analytical dataset includes 136,590 retained occurrence records, comprising 134,853 records from OBIS and 1,737 records from field surveys. The dataset includes 458 species distributed across 11 classes, 39 orders, and 121 families.
 
-This repository accompanies a manuscript under revision for *Marine Ecology Progress Series*. The code and processed files are provided to support transparency and reproducibility during peer review and publication.
+Occurrence records were used to evaluate site-level occurrence-based richness, ecoregion-scale composition, and beta diversity across seven Marine Ecoregions of the World along the study domain.
 
-## Overview
+## Environmental data
 
-The study analyzes latitudinal variation in benthic macrofauna diversity along the Mexico-U.S. Atlantic coast. The workflow integrates occurrence records from the Ocean Biodiversity Information System (OBIS), complementary field-survey records from the Mexican Atlantic coast, taxonomic validation against the World Register of Marine Species (WoRMS), satellite-derived environmental predictors, Random Forest regression, partial dependence plots, and beta-diversity analyses among marine ecoregions.
+Environmental predictors include sea surface temperature, chlorophyll concentration, particulate organic carbon, sea surface salinity, and depth.
 
-## Data sources
+Sea surface temperature, chlorophyll concentration, and particulate organic carbon were extracted from 2021 annual Level 3 Aqua MODIS products at 4 km spatial resolution. These layers were used as a recent spatial environmental baseline and should not be interpreted as year-specific environmental reconstructions for each historical occurrence record.
 
-The analyses use the following data sources:
+Depth and sea surface salinity were obtained from record metadata, following the structure used in the analytical dataset.
 
-1. **OBIS occurrence records**  
-   Occurrence records were obtained from the Ocean Biodiversity Information System for a curated list of shallow-water macrobenthic invertebrate taxa.
-
-2. **Field-survey records**  
-   Complementary field surveys along the Atlantic coast of Mexico generated additional occurrence records used to improve coverage in the Mexican tropical sector.
-
-3. **Taxonomic standardization**  
-   Scientific names were checked against WoRMS. Accepted names and AphiaIDs were used to harmonize taxonomy across data sources.
-
-4. **Environmental predictors**  
-   Environmental variables used in the Random Forest analyses include sea surface temperature, sea surface salinity, chlorophyll, particulate organic carbon, depth, and a sampling-effort proxy derived from the occurrence table.
-
-## Repository structure
-
-The repository is organized as follows:
+## Repository contents
 
 ```text
-latitudinal-macrofauna-atlantic-coast/
-│
-├── README.md
-├── LICENSE
-├── CITATION.cff
-│
-├── data/
-│   ├── raw/
-│   │   └── README.md
-│   │
-│   └── processed/
-│       ├── Supplementary file 1.xlsx
-│       ├── Supplementary file 2.xlsx
-│       └── Supplementary file 3.xlsx
-│
-├── scripts/
-│   ├── 01_data_filtering_and_taxonomy.R
-│   ├── 02_environmental_data_processing.R
-│   ├── 03_random_forest_models.R
-│   ├── 04_beta_diversity.R
-│   └── 05_figures.R
-│
-└── outputs/
-    ├── figures/
-    └── tables/
+data/
+  Data tables used in the analyses.
+
+scripts/
+  R scripts used to generate the analyses.
+
+README.md
+  Repository description and usage notes.
+
+CITATION.cff
+  Citation information for this repository.
